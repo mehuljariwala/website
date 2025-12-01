@@ -14,8 +14,7 @@ const siteConfig = {
   title: "Mehul Jariwala | AI Consultant & LLM Expert | Hire AI Developer",
   description:
     "Need AI help? I'm Mehul Jariwala, an expert AI consultant with 8+ years building ChatGPT integrations, AI agents, RAG systems & LLM applications. Ex-IBM, worked with Amazon, Tesco, Walmart. Hire me for AI consulting, custom AI development, and chatbot solutions. Book a free consultation today.",
-  url: "https://mehuljariwala.com", // Update with your actual domain
-  ogImage: "/og-image.jpg", // Add an OG image to public folder
+  url: "https://mehuljari.in",
   links: {
     linkedin: "https://linkedin.com/in/mehuljariwala",
     github: "https://github.com/mehuljariwala",
@@ -175,17 +174,19 @@ export const metadata: Metadata = {
     },
   },
 
-  // Icons
+  // Icons - Using Next.js auto-generated icons from icon.tsx and apple-icon.tsx
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon", type: "image/png", sizes: "32x32" },
+    ],
+    apple: "/apple-icon",
   },
 
   // Manifest
   manifest: "/site.webmanifest",
 
-  // Open Graph
+  // Open Graph - Images auto-generated from opengraph-image.tsx
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -193,28 +194,19 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
     siteName: siteConfig.name,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: "Mehul Jariwala - AI/ML Engineer & Full-Stack Consultant",
-      },
-    ],
   },
 
-  // Twitter
+  // Twitter - Images auto-generated from twitter-image.tsx
   twitter: {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
-    images: [siteConfig.ogImage],
-    creator: "@mehuljariwala", // Update with your Twitter handle
+    creator: "@mehuljariwala",
   },
 
-  // Verification (add your verification codes)
+  // Verification
   verification: {
-    google: "your-google-verification-code", // Add from Google Search Console
+    google: "h8e1qo_hC6z-mCG8PVDCewGhnAKhfPtIkKO3Y6V6j5M",
     // yandex: "your-yandex-verification-code",
     // bing: "your-bing-verification-code",
   },
@@ -242,7 +234,7 @@ const jsonLd = {
       givenName: "Mehul",
       familyName: "Jariwala",
       url: siteConfig.url,
-      image: `${siteConfig.url}/profile.jpg`,
+      image: `${siteConfig.url}/opengraph-image`,
       description: siteConfig.description,
       jobTitle: "AI/ML Engineer & Full-Stack Consultant",
       worksFor: {
