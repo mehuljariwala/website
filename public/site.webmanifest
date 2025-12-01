@@ -1,0 +1,22 @@
+{
+  "name": "Mehul Jariwala | AI/ML Engineer",
+  "short_name": "Mehul J",
+  "description": "Expert AI/ML Engineer with 8+ years of experience building production-ready AI systems, LLM agents, RAG pipelines, and full-stack applications.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10a37f",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
