@@ -1,63 +1,76 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { AnimatedSection } from "./AnimatedSection";
 import { fadeInUp, staggerContainer } from "./animations";
+
+const companies = [
+  {
+    name: "Amazon",
+    description: "E-commerce & Cloud",
+    logo: "https://logo.clearbit.com/amazon.com",
+  },
+  {
+    name: "Flipkart",
+    description: "E-commerce",
+    logo: "https://logo.clearbit.com/flipkart.com",
+  },
+  {
+    name: "Walmart",
+    description: "Retail & Technology",
+    logo: "https://logo.clearbit.com/walmart.com",
+  },
+  {
+    name: "IBM",
+    description: "Technology & Consulting",
+    logo: "https://logo.clearbit.com/ibm.com",
+  },
+  {
+    name: "Tesco",
+    description: "Retail & Digital",
+    logo: "https://logo.clearbit.com/tesco.com",
+  },
+  {
+    name: "Tata Neu",
+    description: "Super App",
+    logo: "https://logo.clearbit.com/tata.com",
+  },
+  {
+    name: "FasterOutcomes",
+    description: "AI Solutions",
+    logo: "https://logo.clearbit.com/fasteroutcomes.com",
+  },
+  {
+    name: "T-Mobile",
+    description: "Telecommunications",
+    logo: "https://logo.clearbit.com/t-mobile.com",
+  },
+  {
+    name: "Meta",
+    description: "Social Media & AI",
+    logo: "https://logo.clearbit.com/meta.com",
+  },
+];
 
 export function Companies() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [failedLogos, setFailedLogos] = useState<Set<number>>(new Set());
 
-  const companies = [
-    {
-      name: "Amazon",
-      description: "E-commerce & Cloud",
-      logo: "https://logo.clearbit.com/amazon.com",
-    },
-    {
-      name: "Flipkart",
-      description: "E-commerce",
-      logo: "https://logo.clearbit.com/flipkart.com",
-    },
-    {
-      name: "Walmart",
-      description: "Retail & Technology",
-      logo: "https://logo.clearbit.com/walmart.com",
-    },
-    {
-      name: "IBM",
-      description: "Technology & Consulting",
-      logo: "https://logo.clearbit.com/ibm.com",
-    },
-    {
-      name: "Tesco",
-      description: "Retail & Digital",
-      logo: "https://logo.clearbit.com/tesco.com",
-    },
-    {
-      name: "Tata Neu",
-      description: "Super App",
-      logo: "https://logo.clearbit.com/tata.com",
-    },
-    {
-      name: "FasterOutcomes",
-      description: "AI Solutions",
-      logo: "https://logo.clearbit.com/fasteroutcomes.com",
-    },
-    {
-      name: "T-Mobile",
-      description: "Telecommunications",
-      logo: "https://logo.clearbit.com/t-mobile.com",
-    },
-    {
-      name: "Meta",
-      description: "Social Media & AI",
-      logo: "https://logo.clearbit.com/meta.com",
-    },
-  ];
+  useEffect(() => {
+    companies.forEach((company, index) => {
+      if (!failedLogos.has(index)) {
+        const img = new window.Image();
+        img.onerror = () => {
+          setFailedLogos((prev) => new Set(prev).add(index));
+        };
+        img.src = company.logo;
+      }
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <section ref={ref} className="py-10 bg-[#f7f7f8]">
@@ -101,9 +114,6 @@ export function Companies() {
                     height={64}
                     className="w-full h-full object-contain"
                     unoptimized
-                    onError={() => {
-                      setFailedLogos((prev) => new Set(prev).add(index));
-                    }}
                   />
                 )}
               </div>
