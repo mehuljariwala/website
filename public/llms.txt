@@ -1,0 +1,62 @@
+# Mehul Jariwala — mehuljari.in
+
+> Full-Stack Engineer & AI/ML Specialist with 8+ years of experience building production software.
+
+## About
+
+Mehul Jariwala is a full-stack engineer and AI/ML specialist based in Bangalore, India. He has 8+ years of experience shipping production software across industries including finance, retail, healthcare, and legal tech. He specializes in building LLM-powered agents, RAG systems, and scalable full-stack applications.
+
+## Current Role
+
+Lead Full Stack + Gen AI/ML Engineer (Founding) at FasterOutcomes — building a Legal AI platform using LangChain, LangGraph, Temporal, and vector databases.
+
+## Previous Experience
+
+- Staff Software Engineer at IBM Labs — built AI-powered analytics platform processing millions of events
+- Senior Software Engineer at Publicis Sapient — scaled Tesco's online grocery platform across UK, Central Europe, and Asia Pacific
+- Senior Software Engineer (Founding Team) at Fitbots — led front-end architecture for OKR SaaS platform
+
+## Companies Worked With
+
+IBM, Amazon, Tesco, Walmart, Flipkart, T-Mobile, Tata Neu, Publicis Sapient
+
+## Technical Expertise
+
+- AI/ML: RAG, AI Agents, LangChain, LangGraph, LlamaIndex, AutoGen, CrewAI, Pinecone, Hugging Face, TensorFlow
+- Frontend: React.js, Next.js, TypeScript, Svelte, Vue.js, Tailwind CSS
+- Backend: Node.js, Python, FastAPI, Java, NestJS, GraphQL
+- Infrastructure: AWS, GCP, Docker, Kubernetes, Kafka, ElasticSearch
+- Databases: PostgreSQL, MongoDB, DynamoDB, CosmosDB, Pinecone
+
+## Education
+
+- Master of Computer Applications (MCA) — Jain University, Bangalore (Gold Medalist, 9.1/10.0 GPA)
+- Bachelor of Computer Applications (BCA) — Bhagwan Mahavir University, Surat (8.9/10.0 GPA)
+
+## Blog Topics
+
+Mehul writes about AI engineering, system design, RAG systems, AI agents, microservices, TypeScript patterns, and real-world case studies from building production AI systems.
+
+## Popular Articles
+
+- "Why Your RAG System Sucks (And How to Fix It)" — 15.8K readers
+- "How I Replaced 50 Hours of Manual Work with a Single AI Agent" — 12.4K readers
+- "System Design: How We Built a Real-Time Analytics Platform at IBM" — 8.7K readers
+- "Scaling Tesco's Online Grocery to Millions of Users Across 3 Continents" — 6.3K readers
+- "AI Agent Development with CrewAI and AutoGen" — 5.1K readers
+
+## Contact
+
+- Website: https://mehuljari.in
+- LinkedIn: https://linkedin.com/in/mehul-jariwala-352a01132/
+- GitHub: https://github.com/mehuljariwala
+- Email: mehuljari.dev@gmail.com
+- Book a Call: https://calendly.com/mjariwala98/15min
+
+## Pages
+
+- Home: https://mehuljari.in/
+- About: https://mehuljari.in/about
+- Blog: https://mehuljari.in/blog
+- Projects: https://mehuljari.in/projects
+- RSS: https://mehuljari.in/rss.xml

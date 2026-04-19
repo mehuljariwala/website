@@ -1,0 +1,33 @@
+---
+import { siteConfig } from "@/data/site.config";
+import ThemeToggle from "./ThemeToggle.astro";
+
+const pathname = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/80 backdrop-blur-sm dark:border-zinc-700 dark:bg-zinc-900/80">
+  <nav class="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
+    <a href="/" class="text-lg font-bold text-zinc-900 dark:text-zinc-100 hover:text-accent">
+      MJ
+    </a>
+
+    <div class="flex items-center gap-6">
+      {
+        siteConfig.nav.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              "text-sm font-medium transition-colors",
+              pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))
+                ? "text-accent"
+                : "text-zinc-600 hover:text-accent dark:text-zinc-400 dark:hover:text-accent",
+            ]}
+          >
+            {item.text}
+          </a>
+        ))
+      }
+      <ThemeToggle />
+    </div>
+  </nav>
+</header>

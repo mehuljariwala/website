@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-accent: #10a37f;
+  --color-accent-hover: #0d8a6b;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-gray-800 antialiased dark:bg-zinc-900 dark:text-zinc-200;
+  font-family: var(--font-sans);
+}
+
+::selection {
+  @apply bg-accent/20 text-accent;
+}
+
+.prose {
+  @apply max-w-none;
+}
+
+.prose a {
+  @apply text-accent underline decoration-accent/30 underline-offset-2 hover:decoration-accent;
+}
+
+.prose code {
+  @apply rounded bg-zinc-100 px-1 py-0.5 text-sm dark:bg-zinc-800;
+}
+
+.prose pre {
+  @apply rounded-lg border border-zinc-200 dark:border-zinc-700;
+  overflow-x: auto;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.prose pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.85em;
+  white-space: pre;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+.prose img {
+  @apply rounded-lg;
+}
+
+.prose blockquote {
+  @apply border-l-accent;
+}
+
+a {
+  @apply transition-colors duration-200;
+}

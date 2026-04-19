@@ -1,0 +1,145 @@
+---
+import Base from "@/layouts/Base.astro";
+
+const openSource = {
+  name: "@iamjariwala/react-doc-viewer",
+  version: "1.8.0",
+  description: "React document viewer component — render PDF, Word, Excel, PowerPoint, Markdown, images, video, CSV and 20+ file types with annotations, text search, dark mode, drag-and-drop, thumbnails, zoom and i18n.",
+  npm: "https://www.npmjs.com/package/@iamjariwala/react-doc-viewer",
+  github: "https://github.com/mehuljariwala/react-doc-viewer",
+  tags: ["react", "typescript", "pdf-viewer", "document-viewer", "open-source"],
+};
+
+const projects = [
+  {
+    name: "Finance",
+    category: "Web Development",
+    description: "A modern finance tracking web application with real-time data visualization and portfolio management.",
+  },
+  {
+    name: "Orizon",
+    category: "Web Development",
+    description: "A full-stack web platform built with modern frameworks for seamless user experiences.",
+  },
+  {
+    name: "Fundo",
+    category: "Web Design",
+    description: "A clean, conversion-focused web design for a funding and investment platform.",
+  },
+  {
+    name: "Brawlhalla",
+    category: "Application",
+    description: "A feature-rich application with real-time capabilities and interactive UI elements.",
+  },
+  {
+    name: "DSM.",
+    category: "Web Design",
+    description: "A design system management tool with a focus on consistency and scalable UI components.",
+  },
+  {
+    name: "MetaSpark",
+    category: "Web Design",
+    description: "A visually engaging web design project emphasizing modern aesthetics and user interaction.",
+  },
+  {
+    name: "Summary",
+    category: "Web Development",
+    description: "A content summarization tool that processes and condenses information efficiently.",
+  },
+  {
+    name: "Task Manager",
+    category: "Application",
+    description: "A productivity application for organizing, tracking, and managing tasks and workflows.",
+  },
+  {
+    name: "Arrival",
+    category: "Web Development",
+    description: "A web application focused on logistics and arrival tracking with real-time updates.",
+  },
+];
+
+const categories = [...new Set(projects.map((p) => p.category))];
+---
+
+<Base title="Projects" description="Portfolio projects and open source libraries by Mehul Jariwala">
+  <h1 class="text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-4">Projects</h1>
+  <p class="text-zinc-600 dark:text-zinc-400 mb-8">
+    Open source libraries and projects I've built.
+  </p>
+
+  <!-- Open Source -->
+  <h2 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-4">Open Source Library</h2>
+  <a
+    href={openSource.npm}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="block rounded-lg border-2 border-accent/30 bg-accent/5 p-5 mb-10 transition-colors hover:border-accent group dark:bg-accent/5"
+  >
+    <div class="flex items-start justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2 flex-wrap mb-1">
+          <h3 class="text-lg font-semibold text-zinc-900 group-hover:text-accent dark:text-zinc-100">
+            {openSource.name}
+          </h3>
+          <span class="rounded-full bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">v{openSource.version}</span>
+          <span class="rounded-full bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 text-xs text-zinc-500">Apache-2.0</span>
+        </div>
+        <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-1">{openSource.description}</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          {openSource.tags.map(tag => (
+            <span class="rounded-full border border-accent/20 px-2 py-0.5 text-xs text-accent">{tag}</span>
+          ))}
+        </div>
+        <div class="mt-3 flex items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
+          <a href={openSource.github} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:text-accent">
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href={openSource.npm} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:text-accent">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M0 7.334v8h6.666v1.332H12v-1.332h12v-8H0zm6.666 6.664H5.334v-4H3.999v4H1.335V8.667h5.331v5.331zm4 0h-2.666V8.667h2.666v5.331zm12 0h-1.333v-4h-1.334v4h-1.333v-4h-1.334v4h-2.666V8.667h7.999v5.331z"/></svg>
+            npm
+          </a>
+          <span>20+ file types supported</span>
+        </div>
+      </div>
+      <div class="shrink-0 text-accent">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+      </div>
+    </div>
+  </a>
+
+  <!-- Other Projects -->
+  <h2 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-4">Other Projects</h2>
+
+  <div class="mb-8 flex flex-wrap gap-2">
+    {
+      categories.map((cat) => (
+        <span class="rounded-full border border-zinc-200 px-3 py-1 text-sm text-zinc-600 dark:border-zinc-700 dark:text-zinc-400">
+          {cat}
+        </span>
+      ))
+    }
+  </div>
+
+  <div class="space-y-6">
+    {
+      projects.map((project) => (
+        <div class="group rounded-lg border border-zinc-200 p-5 transition-colors hover:border-accent dark:border-zinc-700 dark:hover:border-accent">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-lg font-semibold text-zinc-900 group-hover:text-accent dark:text-zinc-100">
+                {project.name}
+              </h3>
+              <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+                {project.description}
+              </p>
+            </div>
+            <span class="shrink-0 rounded-full border border-zinc-200 px-2.5 py-0.5 text-xs text-zinc-500 dark:border-zinc-700 dark:text-zinc-400">
+              {project.category}
+            </span>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Base>

@@ -1,0 +1,188 @@
+---
+import Base from "@/layouts/Base.astro";
+import { siteConfig } from "@/data/site.config";
+
+const aboutJsonLd = [
+  {
+    "@type": "Person",
+    name: "Mehul Jariwala",
+    jobTitle: "AI/ML Engineer & Full-Stack Consultant",
+    url: siteConfig.url,
+    description: "Full-Stack Engineer & AI/ML Specialist with 8+ years of experience shipping production software.",
+    knowsAbout: ["AI Agents", "RAG Systems", "LangChain", "React", "Next.js", "Python", "Node.js", "Kubernetes"],
+    hasOccupation: [
+      { "@type": "Occupation", name: "Lead Full Stack + AI/ML Engineer", occupationLocation: { "@type": "Place", name: "Remote" } },
+    ],
+    alumniOf: [
+      { "@type": "CollegeOrUniversity", name: "Jain University", location: "Bangalore" },
+      { "@type": "CollegeOrUniversity", name: "Bhagwan Mahavir University", location: "Surat" },
+    ],
+    award: "Gold Medalist — Jain University MCA",
+    sameAs: [siteConfig.links.linkedin, siteConfig.links.github, siteConfig.links.twitter, siteConfig.links.medium],
+  },
+  {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+      { "@type": "ListItem", position: 2, name: "About" },
+    ],
+  },
+];
+---
+
+<Base title="About" description="Mehul Jariwala — Full-Stack Engineer & AI/ML Specialist with 8+ years experience. Ex-IBM, built solutions for Amazon, Tesco, Walmart. Expert in AI agents, RAG systems, LangChain, React, and Python." jsonLd={aboutJsonLd}>
+  <h1 class="text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-8">About</h1>
+
+  <div class="prose dark:prose-invert">
+    <p>
+      I'm <strong>Mehul Jariwala</strong>, a full-stack engineer with 8+ years of experience
+      delivering scalable web applications and robust platform capabilities. I focus on AI/ML
+      engineering — building LLM-powered agents, RAG systems, and production-grade AI integrations.
+    </p>
+
+    <p>
+      I've worked with companies like <strong>IBM</strong>, <strong>Publicis Sapient</strong>, and
+      built solutions for clients including Amazon, Tesco, Walmart, and Flipkart. Currently, I'm a
+      Founding Engineer at FasterOutcomes, building a Legal AI platform.
+    </p>
+
+    <h2>What I Do</h2>
+    <ul>
+      <li><strong>AI & Automation</strong> — Building intelligent workflows and AI-powered features using modern LLMs, agents, and automation tools</li>
+      <li><strong>Full-Stack Development</strong> — Building scalable web applications with modern technologies and best practices</li>
+      <li><strong>API Development & Integration</strong> — Designing and integrating robust REST/GraphQL APIs for seamless system communication</li>
+      <li><strong>Data Engineering & Analytics</strong> — Designing pipelines, dashboards, and analytics to turn raw data into actionable insights</li>
+      <li><strong>Cloud Infrastructure & DevOps</strong> — Setting up and managing cloud infrastructure with CI/CD pipelines and automation</li>
+      <li><strong>Security & Performance</strong> — Implementing secure coding practices, optimizing performance, and ensuring scalability under heavy loads</li>
+      <li><strong>UI/UX Design</strong> — Creating intuitive user interfaces and interactive prototypes for better user experience</li>
+      <li><strong>Mentorship & Collaboration</strong> — Guiding teams, reviewing code, and fostering collaboration to deliver high-impact solutions</li>
+    </ul>
+
+    <h2>Skills</h2>
+
+    <h3>Programming Languages</h3>
+    <p>JavaScript, TypeScript, Python (FastAPI), Java</p>
+
+    <h3>AI Stack</h3>
+    <p>RAG, AI Agents, LangChain, LangGraph, LlamaIndex, AutoGen, CrewAI, N8n, LLM Training, Pinecone, Temporal, Mistral, OCR, Hugging Face</p>
+
+    <h3>Frameworks & Libraries</h3>
+    <p>React.js, Next.js, AngularJS, Svelte, Vue.js, Node.js, NestJS, GraphQL</p>
+
+    <h3>Databases</h3>
+    <p>MySQL, MongoDB, PostgreSQL, AWS DynamoDB, CouchDB, CosmosDB, DB2</p>
+
+    <h3>DevOps & Tools</h3>
+    <p>Docker, Kubernetes, CI/CD (GitHub Actions, GitLab CI), Webpack, Rollup, Git, JIRA, Splunk, New Relic, Grafana, Prometheus, OpenTelemetry, DataDog, ELK Stack</p>
+
+    <h3>CSS & UI</h3>
+    <p>Tailwind CSS, Material-UI, Bootstrap, Ant Design, Highcharts, D3.js</p>
+
+    <h3>Testing</h3>
+    <p>Jest, Cypress, Playwright, PyTest, Selenium</p>
+
+    <h3>Messaging & Streaming</h3>
+    <p>Kafka, RabbitMQ, Zookeeper</p>
+
+    <h3>Web Development</h3>
+    <p>Micro frontends, RXJS, HTML5, CSS3, ES5–ES7, Web Accessibility Standards, Responsive Design, Cross-browser Compatibility</p>
+
+    <hr />
+
+    <h2>Experience</h2>
+
+    <h3>FasterOutcomes <span class="text-sm font-normal text-zinc-500">— Aug 2025 - Present</span></h3>
+    <p class="text-sm text-accent !mt-0">Lead Full Stack + Gen AI/ML - Founding Engineer</p>
+    <p>
+      Building a next-generation Legal AI platform that turns raw legal data into actionable insights
+      and dramatically reduces lawyer workflows.
+    </p>
+    <p class="!mt-2"><em>Project: Legal AI Platform — Chunk-based ingestion with vector-backed retrieval powering draft generation, clause suggestions, redlining, deposition prep, and courtroom-ready summaries grounded by Temporal workflows.</em></p>
+    <ul>
+      <li>Architected microservices-based ingestion with chunking, vector DB storage, and ElasticSearch for fast, citation-backed retrieval</li>
+      <li>Orchestrated LLM pipelines using LangChain/LangGraph with Temporal and n8n to coordinate multi-model workflows and retries</li>
+      <li>Delivered GenAI-powered drafting (briefs, clauses, depositions) with human-in-loop review to minimize hallucinations</li>
+      <li>Built intuitive React/Next.js interfaces for semantic search, multi-level summarization, and decision-support analytics</li>
+      <li>Established MLOps practices and custom model training for legal-specific embeddings and classification</li>
+    </ul>
+    <p class="text-xs text-zinc-500 !mt-2">React.js, Next.js, Tailwind CSS, Node.js, Python, Java, LangChain, LangGraph, OpenRouter, ElasticSearch, Vector DBs, Temporal, n8n, AWS, GenAI, MLOps</p>
+
+    <h3>IBM <span class="text-sm font-normal text-zinc-500">— Jan 2025 - Aug 2025</span></h3>
+    <p class="text-sm text-accent !mt-0">Staff Software Engineer - IBM Labs</p>
+    <p>
+      Led enterprise AI platform initiatives across IBM Labs, evolving large-scale observability and
+      automation solutions while mentoring teams on AI-first delivery practices.
+    </p>
+    <p class="!mt-2"><em>Project: AI-Powered Customer Analytics Platform & Observability Dashboard — Cloud-native system that visualizes engagement, predicts behavior, and automates workflows across AWS, Azure, and GCP.</em></p>
+    <ul>
+      <li>Designed and deployed scalable microservices with FastAPI and Node.js on Docker/Kubernetes while enforcing observability standards</li>
+      <li>Built real-time and offline pipelines with Kafka, RabbitMQ, and webhooks for event processing and automation</li>
+      <li>Developed immersive analytics dashboards using React, Material-UI, and D3.js to showcase customer insights</li>
+      <li>Integrated ML/LLM capabilities (TensorFlow, Hugging Face) and orchestrated multi-agent systems via LangGraph, AutoGen, CrewAI</li>
+      <li>Implemented full-stack observability with Prometheus, Grafana, OpenTelemetry, New Relic, ELK Stack, plus resilience patterns for high uptime</li>
+      <li>Led cross-functional squads, mentored engineers, and established best practices for AI-first feature delivery</li>
+    </ul>
+    <p class="text-xs text-zinc-500 !mt-2">React.js, Next.js, D3.js, Node.js, FastAPI, Python, Kafka, RabbitMQ, Docker, Kubernetes, TensorFlow, Hugging Face, LangGraph, AutoGen, CrewAI, Prometheus, Grafana, ELK Stack, OpenTelemetry</p>
+
+    <h3>Publicis Sapient <span class="text-sm font-normal text-zinc-500">— Apr 2022 - Dec 2024</span></h3>
+    <p class="text-sm text-accent !mt-0">Senior / Full Stack Experience Engineer</p>
+    <p>
+      Led full-stack development across global online grocery platforms and internal enterprise tools,
+      focusing on scalability, real-time performance, and automation.
+    </p>
+    <p class="!mt-2"><em>Project: Omnichannel Grocery Platform & Identity Management System — Scalable ecommerce and admin systems deployed across UK, CEU, and APAC with integrations for delivery, location intelligence, and enterprise user management.</em></p>
+    <ul>
+      <li>Built and scaled grocery shopping platforms for UK, CEU, and APAC, ensuring smooth backend integrations</li>
+      <li>Developed a lightweight delivery system in Thailand using Java, NestJS, and Kafka, improving delivery speed</li>
+      <li>Designed Python-based microservices with Flask and FastAPI for data handling and reporting</li>
+      <li>Created real-time data pipelines using Pandas and NumPy for behavioral analytics</li>
+      <li>Engineered a high-performance Bing Maps booking module using React, Redux, and Svelte</li>
+      <li>Built and maintained an Identity & Access Management platform with the MEAN stack</li>
+      <li>Developed an enterprise-grade Chrome extension for Single Sign-On (SSO) authentication</li>
+      <li>Optimized the frontend setup using Webpack, React Hooks, and Micro Frontends for modular architecture</li>
+      <li>Ensured system reliability and uptime with Splunk, New Relic, and Grafana monitoring under high load</li>
+    </ul>
+    <p class="text-xs text-zinc-500 !mt-2">React.js, Svelte, AngularJS, Redux, NestJS, Flask, FastAPI, Java, Python, Kafka, Google Maps API, Bing Maps API, MongoDB, Webpack, Micro Frontend, Splunk, New Relic, Grafana</p>
+
+    <h3>Fitbots (OKRs) <span class="text-sm font-normal text-zinc-500">— Sep 2018 - Apr 2022</span></h3>
+    <p class="text-sm text-accent !mt-0">Senior Software Engineer - Founding Team</p>
+    <p>
+      Early engineering team member at a fast-growing OKR startup, leading front-end architecture for
+      a modular, scalable Employee Self-Serve Portal.
+    </p>
+    <p class="!mt-2"><em>Project: Employee Self-Serve OKR Platform — A modular SaaS solution enabling organizations to align and track OKRs with performance insights and HR workflows.</em></p>
+    <ul>
+      <li>Led front-end development of a 14+ module portal using React and Next.js, delivering a seamless user experience</li>
+      <li>Built a modular component library using Stencil JS and Tailwind CSS following Atomic Design principles</li>
+      <li>Implemented responsive layouts and accessibility-first interfaces using React, HTML/CSS, and SCSS</li>
+      <li>Ensured cross-platform compatibility and reusability of components for long-term scalability</li>
+      <li>Actively participated in Agile processes: daily standups, sprint planning, and retrospectives to drive continuous delivery</li>
+    </ul>
+    <p class="text-xs text-zinc-500 !mt-2">React.js, Next.js, Stencil JS, Tailwind CSS, HTML5, SCSS, JavaScript, Web Accessibility, Atomic Design, Agile</p>
+
+    <hr />
+
+    <h2>Education</h2>
+    <ul>
+      <li>
+        <strong>Master of Computer Applications (MCA)</strong> — Jain University, Bangalore (2017–2019)
+        <br /><span class="text-sm text-zinc-500">Gold Medalist | GPA: 9.1/10.0</span>
+        <br /><span class="text-sm text-zinc-500">Advanced program focusing on software engineering, distributed systems, and enterprise application development. Specialized in modern web technologies, database management, cloud computing, and project management.</span>
+      </li>
+      <li>
+        <strong>Bachelor of Computer Applications (BCA)</strong> — Bhagwan Mahavir College, Surat (2014–2017)
+        <br /><span class="text-sm text-zinc-500">GPA: 8.9/10.0</span>
+        <br /><span class="text-sm text-zinc-500">Comprehensive program covering fundamental computer science concepts, programming languages, and software development principles.</span>
+      </li>
+    </ul>
+
+    <hr />
+
+    <h2>Get in Touch</h2>
+    <p>
+      Have an AI project in mind? <a href={siteConfig.links.calendly}>Book a free 15-min call</a>,
+      <a href={siteConfig.links.email}>email me</a>, or connect on
+      <a href={siteConfig.links.linkedin}>LinkedIn</a>.
+    </p>
+  </div>
+</Base>
