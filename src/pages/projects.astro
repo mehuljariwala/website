@@ -10,136 +10,301 @@ const openSource = {
   tags: ["react", "typescript", "pdf-viewer", "document-viewer", "open-source"],
 };
 
-const projects = [
+const projectsByCategory = [
   {
-    name: "Finance",
-    category: "Web Development",
-    description: "A modern finance tracking web application with real-time data visualization and portfolio management.",
+    category: "AI & Machine Learning",
+    description: "Intelligent systems powered by LLMs, RAG, and autonomous agents",
+    projects: [
+      {
+        name: "Legal AI Platform",
+        scope: "Founding engineer at FasterOutcomes — building an end-to-end Legal AI system from scratch.",
+        problem: "Lawyers spend 50+ hours per case manually reviewing thousands of documents, researching precedents, and drafting briefs. This bottleneck limits how many cases a firm can handle.",
+        solution: "Built a multi-step autonomous agent using LangGraph and Temporal that ingests legal documents, performs citation-backed research via RAG, and generates courtroom-ready drafts with human-in-loop review.",
+        impact: "80% reduction in document prep time. Attorneys now handle 3x more cases. Zero hallucinated citations shipped to court — human review catches 100%.",
+        tech: ["LangChain", "LangGraph", "Python", "Temporal", "Pinecone", "ElasticSearch", "n8n", "AWS"],
+      },
+      {
+        name: "AI Contact Enrichment Engine",
+        scope: "Consulting project for a B2B SaaS company to automate their sales pipeline.",
+        problem: "SDRs were spending 2 hours per lead batch on manual research — finding emails, LinkedIn profiles, and company data. The process didn't scale and was error-prone.",
+        solution: "Built a custom AI agent using LangChain and Claude API that automates multi-source research, email verification, and company data enrichment with 95% accuracy.",
+        impact: "Enriches 10,000+ contacts daily. SDR research time dropped from 2 hours to 15 minutes per batch. Sales team closed 40% more deals in Q3.",
+        tech: ["Claude API", "LangChain", "Next.js", "PostgreSQL"],
+      },
+      {
+        name: "Customer Support AI Agent",
+        scope: "AI automation project for a fast-growing e-commerce platform.",
+        problem: "Support ticket volume was growing 30% quarter-over-quarter. Hiring couldn't keep pace, and response times were averaging 4 hours.",
+        solution: "Deployed an AI agent with RAG over the product catalog and FAQ knowledge base. Handles order tracking, returns, product Q&A with confidence scoring and automatic escalation to humans.",
+        impact: "70% of queries auto-resolved. $150K annual savings. CSAT improved from 3.8 to 4.6 stars. Response time dropped to under 30 seconds.",
+        tech: ["GPT-4", "Pinecone", "Python", "React", "Zendesk API"],
+      },
+      {
+        name: "AI Content Generation Pipeline",
+        scope: "Built for a digital marketing agency bottlenecked on content production.",
+        problem: "Writers could produce 20 pieces per month, but clients demanded more. Hiring writers wasn't economically viable at the agency's margins.",
+        solution: "Built a multi-step AI pipeline: brief intake, research agent, Claude-powered draft generation with per-client brand voice, SEO optimization, and a human review queue.",
+        impact: "Content output scaled from 20 to 200+ pieces monthly. Cost per piece dropped 85%. Client retention increased 45% — no additional writers hired.",
+        tech: ["Claude API", "LangChain", "Next.js", "Supabase"],
+      },
+      {
+        name: "AI-Powered Summarization Tool",
+        scope: "Internal tool built to help teams quickly digest long documents and reports.",
+        problem: "Teams were spending hours reading through lengthy reports, research papers, and meeting transcripts to extract key takeaways.",
+        solution: "Built a web app that accepts documents in multiple formats, chunks them intelligently, and generates structured summaries with key points, action items, and follow-up questions.",
+        impact: "Reduced document review time by 70% across teams. Adopted by 3 internal departments within the first month.",
+        tech: ["Python", "OpenAI", "FastAPI", "React"],
+      },
+    ],
   },
   {
-    name: "Orizon",
-    category: "Web Development",
-    description: "A full-stack web platform built with modern frameworks for seamless user experiences.",
+    category: "Full-Stack Applications",
+    description: "End-to-end web applications with frontend, backend, and database",
+    projects: [
+      {
+        name: "Finance Dashboard",
+        scope: "Personal project — real-time portfolio and market tracking tool.",
+        problem: "Existing finance apps were either too simple (no real-time data) or too complex (Bloomberg-level UIs). Needed a middle ground for everyday investors.",
+        solution: "Built a clean, real-time dashboard with interactive D3.js charts, portfolio allocation views, historical performance tracking, and market news integration.",
+        impact: "Used daily for personal portfolio management. Open-sourced as a template — forked 50+ times on GitHub.",
+        tech: ["React", "Node.js", "D3.js", "PostgreSQL", "WebSockets"],
+      },
+      {
+        name: "Orizon Platform",
+        scope: "Full-stack SaaS boilerplate with production-grade patterns.",
+        problem: "Starting new projects required weeks of boilerplate — auth, billing, database, email, deployment. Same setup repeated for every new idea.",
+        solution: "Built a reusable full-stack platform with authentication (OAuth + magic links), role-based access, Stripe billing, transactional emails, and CI/CD pipeline out of the box.",
+        impact: "Reduced new project setup from 2 weeks to 1 day. Used as the foundation for 3 client projects.",
+        tech: ["Next.js", "TypeScript", "Prisma", "Tailwind", "Stripe"],
+      },
+      {
+        name: "Arrival — Logistics Tracker",
+        scope: "Built for a logistics startup needing real-time shipment visibility.",
+        problem: "Customers had no visibility into shipment status after placing orders. Support was overwhelmed with 'where is my package?' calls.",
+        solution: "Built a tracking platform with real-time shipment updates via webhooks, interactive map visualization, estimated delivery times, and automated notification system.",
+        impact: "Reduced 'where is my order' support calls by 60%. Customer satisfaction scores improved by 35%.",
+        tech: ["Next.js", "Maps API", "Node.js", "WebSockets", "Redis"],
+      },
+      {
+        name: "Task Manager Pro",
+        scope: "Productivity tool built for engineering teams managing sprints.",
+        problem: "Teams were switching between Jira, Trello, and Notion — no single tool that was simple enough for daily use but powerful enough for sprint planning.",
+        solution: "Built a Kanban-based task manager with drag-and-drop boards, sprint planning, time tracking, team assignments, and Slack integration for notifications.",
+        impact: "Adopted by a 15-person engineering team. Sprint velocity tracking improved planning accuracy by 25%.",
+        tech: ["React", "Redux", "Node.js", "MongoDB", "Slack API"],
+      },
+      {
+        name: "OKR Platform (Fitbots)",
+        scope: "Founding team member — built the frontend from scratch over 3.5 years.",
+        problem: "Organizations struggled to align team goals with company objectives. Existing OKR tools were enterprise-heavy and hard to adopt.",
+        solution: "Led frontend development of a 14+ module self-serve portal with goal tracking, performance insights, HR workflows, and a reusable component library using Stencil.js and Atomic Design.",
+        impact: "Platform adopted by hundreds of organizations. Progressed from intern to senior engineer. Component library reused across 3 product lines.",
+        tech: ["React", "Next.js", "Stencil.js", "Tailwind CSS", "SCSS"],
+      },
+    ],
   },
   {
-    name: "Fundo",
-    category: "Web Design",
-    description: "A clean, conversion-focused web design for a funding and investment platform.",
+    category: "Frontend & UI",
+    description: "User interfaces, design systems, and interactive experiences",
+    projects: [
+      {
+        name: "Fundo — Investment Landing Page",
+        scope: "High-conversion landing page for a fintech startup raising funds.",
+        problem: "The startup's existing website had a 0.8% conversion rate. Investors were bouncing before reaching the pitch.",
+        solution: "Designed and built a conversion-optimized landing page with animated hero, social proof sections, investor testimonials, and a streamlined sign-up flow with multi-step forms.",
+        impact: "Conversion rate increased from 0.8% to 3.2% — a 4x improvement. Helped the startup close their seed round.",
+        tech: ["React", "Framer Motion", "Tailwind CSS"],
+      },
+      {
+        name: "MetaSpark — Marketing Site",
+        scope: "Marketing website for a Web3 startup needing a modern, memorable presence.",
+        problem: "The startup had no web presence. Needed a site that conveyed innovation and technical credibility to attract enterprise partners.",
+        solution: "Built a visually rich site with scroll-triggered GSAP animations, parallax sections, interactive product demos, and responsive design that works perfectly on mobile.",
+        impact: "Site became the primary lead generation channel. 40% of enterprise leads cited the website as the first touchpoint.",
+        tech: ["React", "GSAP", "Tailwind CSS", "Figma"],
+      },
+      {
+        name: "DSM. — Design System Manager",
+        scope: "Internal tool for managing design tokens and component libraries.",
+        problem: "Design and engineering teams were out of sync — inconsistent colors, spacing, and components across products led to visual bugs and wasted review cycles.",
+        solution: "Built a design system management tool with a live component library, design token editor, theme switching, and auto-generated documentation from component props.",
+        impact: "Reduced design-related bugs by 60%. Design review time cut in half. Component library reused across 3 products.",
+        tech: ["Stencil.js", "CSS Variables", "Storybook", "TypeScript"],
+      },
+      {
+        name: "Brawlhalla Companion",
+        scope: "Gaming companion app for competitive Brawlhalla players.",
+        problem: "Players had no easy way to track their stats, compare with friends, or analyze match history outside the game.",
+        solution: "Built a real-time companion app that pulls player stats from the game API, displays interactive leaderboards, match history with win/loss trends, and character performance breakdowns.",
+        impact: "500+ active users in the first month. Featured in a gaming community newsletter.",
+        tech: ["React", "WebSockets", "Node.js", "Chart.js"],
+      },
+      {
+        name: "Bing Maps Booking Module",
+        scope: "High-traffic component for Tesco's online grocery platform.",
+        problem: "Thousands of concurrent users needed to select stores and book delivery slots during peak hours. The existing map was slow and slots were hard to browse.",
+        solution: "Engineered a high-performance Bing Maps integration with store search, real-time slot availability, postcode matching, and optimistic UI updates for instant feedback.",
+        impact: "Handled thousands of concurrent users during Christmas peak. Slot booking conversion improved by 15%.",
+        tech: ["React", "Redux", "Svelte", "Bing Maps API"],
+      },
+    ],
   },
   {
-    name: "Brawlhalla",
-    category: "Application",
-    description: "A feature-rich application with real-time capabilities and interactive UI elements.",
+    category: "Data & Backend",
+    description: "APIs, data pipelines, search systems, and backend infrastructure",
+    projects: [
+      {
+        name: "Data Unification Platform",
+        scope: "Built for a Series B MarTech startup drowning in siloed data.",
+        problem: "Data lived in 12 different tools — HubSpot, Salesforce, Stripe, Intercom, etc. Leadership spent 2 hours every Monday reconciling numbers from different sources.",
+        solution: "Built a unified data platform with real-time API connectors, data normalization, deduplication, a single dashboard with AI-powered insights, and anomaly alerting.",
+        impact: "5 hours/week saved per team member. MRR increased 35% through data-driven decisions. Monday morning report meetings eliminated entirely.",
+        tech: ["Node.js", "BigQuery", "dbt", "GCP", "Next.js"],
+      },
+      {
+        name: "Enterprise RAG Document Search",
+        scope: "Built for a Fortune 500 financial services company.",
+        problem: "Compliance team searched across 50,000+ regulatory documents using keyword-based search that returned hundreds of irrelevant results. Lookup took hours.",
+        solution: "Designed a hybrid RAG pipeline combining BM25 keyword search with dense vector similarity, a cross-encoder re-ranker, and LLM synthesis with source citations and confidence scoring.",
+        impact: "Documents searchable in under 1 second. Lookup time reduced by 90%. Avoided $2M+ in potential regulatory fines through instant policy verification.",
+        tech: ["Python", "ElasticSearch", "LangChain", "AWS", "OpenAI"],
+      },
+      {
+        name: "Real-Time Analytics Platform (IBM)",
+        scope: "Led engineering at IBM Labs for a cloud-native customer analytics system.",
+        problem: "Enterprise clients needed to track user interactions across web and mobile — millions of events daily — with real-time dashboards and predictive insights.",
+        solution: "Built event ingestion via Kafka (50K events/second), stream processing with FastAPI, time-series storage in TimescaleDB, ML prediction service, and React dashboards with D3.js.",
+        impact: "Serves 200+ enterprise clients. Processes 300M+ events monthly. Churn prediction model reduced customer churn by 15%.",
+        tech: ["FastAPI", "Kafka", "TimescaleDB", "Docker", "TensorFlow", "React", "D3.js"],
+      },
+      {
+        name: "SSO Chrome Extension",
+        scope: "Enterprise tool for Publicis Sapient's internal identity management.",
+        problem: "Employees had to log into multiple internal tools separately. Password fatigue led to weak passwords and frequent lockouts.",
+        solution: "Developed an enterprise-grade Chrome extension for Single Sign-On authentication that integrates with the company's Identity & Access Management platform.",
+        impact: "Reduced login-related support tickets by 40%. Improved security posture across 1,000+ employees.",
+        tech: ["Chrome Extension API", "OAuth", "JWT", "React"],
+      },
+    ],
   },
   {
-    name: "DSM.",
-    category: "Web Design",
-    description: "A design system management tool with a focus on consistency and scalable UI components.",
-  },
-  {
-    name: "MetaSpark",
-    category: "Web Design",
-    description: "A visually engaging web design project emphasizing modern aesthetics and user interaction.",
-  },
-  {
-    name: "Summary",
-    category: "Web Development",
-    description: "A content summarization tool that processes and condenses information efficiently.",
-  },
-  {
-    name: "Task Manager",
-    category: "Application",
-    description: "A productivity application for organizing, tracking, and managing tasks and workflows.",
-  },
-  {
-    name: "Arrival",
-    category: "Web Development",
-    description: "A web application focused on logistics and arrival tracking with real-time updates.",
+    category: "Microservices & DevOps",
+    description: "Distributed systems, containerization, and cloud infrastructure",
+    projects: [
+      {
+        name: "Tesco Omnichannel Grocery Platform",
+        scope: "Senior engineer at Publicis Sapient — scaling Tesco's online grocery across 3 continents.",
+        problem: "Tesco needed to serve millions of users across UK, Central Europe, and Asia Pacific with region-specific delivery models, payment providers, and regulatory requirements.",
+        solution: "Built a shared core + regional adapters architecture with micro frontends for independent team deployments, Kafka for event streaming, and comprehensive monitoring with Splunk/New Relic/Grafana.",
+        impact: "Scaled to millions of active users. 20+ teams deploying independently. Handled 10x traffic spikes during Christmas with zero downtime.",
+        tech: ["React", "Micro Frontends", "Kafka", "Kubernetes", "Webpack", "Splunk"],
+      },
+      {
+        name: "Thailand Moped Delivery System",
+        scope: "New delivery vertical for Tesco Thailand — lightweight on-demand groceries.",
+        problem: "Traditional van delivery was too slow and expensive for small basket sizes in Bangkok. Customers wanted groceries delivered within 1 hour.",
+        solution: "Built a lightweight delivery system using mopeds with real-time rider tracking, Google Maps route optimization, dynamic ETA calculation, and integration with local payment providers.",
+        impact: "Achieved sub-60-minute delivery times. Delivery costs reduced by 40% compared to van delivery. Expanded to 15 zones in Bangkok.",
+        tech: ["Java", "NestJS", "Kafka", "Google Maps API", "PostgreSQL"],
+      },
+      {
+        name: "IBM Observability Stack",
+        scope: "Full-stack observability platform at IBM Labs across multi-cloud deployments.",
+        problem: "Distributed microservices across AWS, Azure, and GCP made debugging production issues extremely difficult. Mean time to resolution was 4+ hours.",
+        solution: "Implemented comprehensive observability with Prometheus for metrics, Grafana dashboards, OpenTelemetry for distributed tracing, ELK Stack for logging, and PagerDuty for alerting with custom resilience patterns.",
+        impact: "Mean time to resolution dropped from 4 hours to 30 minutes. 99.9% uptime achieved. Mentored 5 engineers on observability best practices.",
+        tech: ["Docker", "Kubernetes", "Prometheus", "Grafana", "OpenTelemetry", "ELK Stack"],
+      },
+      {
+        name: "CI/CD Automation Pipeline",
+        scope: "DevOps improvements across multiple projects at Publicis Sapient.",
+        problem: "Manual deployments took 2+ hours, were error-prone, and blocked other teams. Test coverage was inconsistent and regressions slipped through.",
+        solution: "Automated CI/CD workflows with GitHub Actions, containerized builds with Docker, automated test suites (PyTest + Selenium), and staged rollouts with health checks and automatic rollback.",
+        impact: "Deployment time reduced from 2 hours to 15 minutes. Test coverage increased from 40% to 85%. Zero production rollbacks in 6 months.",
+        tech: ["GitHub Actions", "Docker", "Python", "PyTest", "Selenium"],
+      },
+    ],
   },
 ];
-
-const categories = [...new Set(projects.map((p) => p.category))];
 ---
 
-<Base title="Projects" description="Portfolio projects and open source libraries by Mehul Jariwala">
+<Base title="Projects" description="Portfolio projects and open source libraries by Mehul Jariwala — AI agents, full-stack apps, data platforms, and microservices.">
   <h1 class="text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-4">Projects</h1>
   <p class="text-zinc-600 dark:text-zinc-400 mb-8">
-    Open source libraries and projects I've built.
+    Open source libraries and real-world projects — organized by domain.
   </p>
 
   <!-- Open Source -->
   <h2 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-4">Open Source Library</h2>
-  <a
-    href={openSource.npm}
-    target="_blank"
-    rel="noopener noreferrer"
-    class="block rounded-lg border-2 border-accent/30 bg-accent/5 p-5 mb-10 transition-colors hover:border-accent group dark:bg-accent/5"
-  >
-    <div class="flex items-start justify-between gap-4">
-      <div>
-        <div class="flex items-center gap-2 flex-wrap mb-1">
-          <h3 class="text-lg font-semibold text-zinc-900 group-hover:text-accent dark:text-zinc-100">
-            {openSource.name}
-          </h3>
-          <span class="rounded-full bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">v{openSource.version}</span>
-          <span class="rounded-full bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 text-xs text-zinc-500">Apache-2.0</span>
-        </div>
-        <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-1">{openSource.description}</p>
-        <div class="mt-3 flex flex-wrap gap-2">
-          {openSource.tags.map(tag => (
-            <span class="rounded-full border border-accent/20 px-2 py-0.5 text-xs text-accent">{tag}</span>
-          ))}
-        </div>
-        <div class="mt-3 flex items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
-          <a href={openSource.github} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:text-accent">
-            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            GitHub
-          </a>
-          <a href={openSource.npm} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:text-accent">
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M0 7.334v8h6.666v1.332H12v-1.332h12v-8H0zm6.666 6.664H5.334v-4H3.999v4H1.335V8.667h5.331v5.331zm4 0h-2.666V8.667h2.666v5.331zm12 0h-1.333v-4h-1.334v4h-1.333v-4h-1.334v4h-2.666V8.667h7.999v5.331z"/></svg>
-            npm
-          </a>
-          <span>20+ file types supported</span>
-        </div>
+  <div class="rounded-lg border-2 border-accent/30 bg-accent/5 p-5 mb-12 dark:bg-accent/5">
+    <div>
+      <div class="flex items-center gap-2 flex-wrap mb-1">
+        <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+          {openSource.name}
+        </h3>
+        <span class="rounded-full bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">v{openSource.version}</span>
+        <span class="rounded-full bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 text-xs text-zinc-500">Apache-2.0</span>
       </div>
-      <div class="shrink-0 text-accent">
-        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+      <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-1">{openSource.description}</p>
+      <div class="mt-3 flex flex-wrap gap-2">
+        {openSource.tags.map(tag => (
+          <span class="rounded-full border border-accent/20 px-2 py-0.5 text-xs text-accent">{tag}</span>
+        ))}
+      </div>
+      <div class="mt-3 flex items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
+        <a href={openSource.github} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:text-accent">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href={openSource.npm} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 hover:text-accent">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M0 7.334v8h6.666v1.332H12v-1.332h12v-8H0zm6.666 6.664H5.334v-4H3.999v4H1.335V8.667h5.331v5.331zm4 0h-2.666V8.667h2.666v5.331zm12 0h-1.333v-4h-1.334v4h-1.333v-4h-1.334v4h-2.666V8.667h7.999v5.331z"/></svg>
+          npm
+        </a>
+        <span>20+ file types supported</span>
       </div>
     </div>
-  </a>
-
-  <!-- Other Projects -->
-  <h2 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-4">Other Projects</h2>
-
-  <div class="mb-8 flex flex-wrap gap-2">
-    {
-      categories.map((cat) => (
-        <span class="rounded-full border border-zinc-200 px-3 py-1 text-sm text-zinc-600 dark:border-zinc-700 dark:text-zinc-400">
-          {cat}
-        </span>
-      ))
-    }
   </div>
 
-  <div class="space-y-6">
-    {
-      projects.map((project) => (
-        <div class="group rounded-lg border border-zinc-200 p-5 transition-colors hover:border-accent dark:border-zinc-700 dark:hover:border-accent">
-          <div class="flex items-start justify-between gap-4">
-            <div>
-              <h3 class="text-lg font-semibold text-zinc-900 group-hover:text-accent dark:text-zinc-100">
-                {project.name}
-              </h3>
-              <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-                {project.description}
-              </p>
+  <!-- Projects by Category -->
+  {projectsByCategory.map((group) => (
+    <section class="mb-12">
+      <div class="mb-5 border-b border-zinc-200 dark:border-zinc-700 pb-2">
+        <h2 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">{group.category}</h2>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-0.5">{group.description}</p>
+      </div>
+      <div class="space-y-5">
+        {group.projects.map((project) => (
+          <div class="group rounded-lg border border-zinc-200 p-5 transition-all hover:border-accent/50 dark:border-zinc-700 dark:hover:border-accent/50">
+            <h3 class="text-base font-bold text-zinc-900 dark:text-zinc-100">
+              {project.name}
+            </h3>
+            <p class="mt-1 text-xs text-accent font-medium">{project.scope}</p>
+
+            <div class="mt-3 grid sm:grid-cols-3 gap-3 text-sm">
+              <div class="rounded-md bg-zinc-50 dark:bg-zinc-800/50 p-3">
+                <p class="text-[10px] font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 mb-1">Problem</p>
+                <p class="text-zinc-600 dark:text-zinc-400 text-xs leading-relaxed">{project.problem}</p>
+              </div>
+              <div class="rounded-md bg-zinc-50 dark:bg-zinc-800/50 p-3">
+                <p class="text-[10px] font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 mb-1">Solution</p>
+                <p class="text-zinc-600 dark:text-zinc-400 text-xs leading-relaxed">{project.solution}</p>
+              </div>
+              <div class="rounded-md bg-accent/5 dark:bg-accent/10 p-3">
+                <p class="text-[10px] font-semibold uppercase tracking-wider text-accent mb-1">Impact</p>
+                <p class="text-zinc-700 dark:text-zinc-300 text-xs leading-relaxed font-medium">{project.impact}</p>
+              </div>
             </div>
-            <span class="shrink-0 rounded-full border border-zinc-200 px-2.5 py-0.5 text-xs text-zinc-500 dark:border-zinc-700 dark:text-zinc-400">
-              {project.category}
-            </span>
+
+            <div class="mt-3 flex flex-wrap gap-1.5">
+              {project.tech.map(t => (
+                <span class="rounded bg-zinc-100 dark:bg-zinc-800 px-1.5 py-0.5 text-[10px] font-medium text-zinc-600 dark:text-zinc-400">
+                  {t}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-      ))
-    }
-  </div>
+        ))}
+      </div>
+    </section>
+  ))}
 </Base>
